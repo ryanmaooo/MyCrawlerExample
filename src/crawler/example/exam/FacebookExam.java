@@ -25,8 +25,8 @@ public class FacebookExam {
 
 		String uri = 
 				"https://graph.facebook.com/v2.6"
-				+ "/search?q="
-				+ "&access_token=";
+				+ "/madvnzdiary/feed?fields=id,reactions.limit(0).summary(total_count)"
+				+ "&access_token=1908241719422913%7C9d61889cf955acad9feda45956a22ebc";
 
 
 		Elements elems =
@@ -39,9 +39,9 @@ public class FacebookExam {
 		// 遂筆處理
 		for( Element data: elems ){
 			String id = data.select("id").text();
-
+			String reactions = data.select("reactions").text();
 			// FIXIT
-			String reactions = "";
+			//String reactions = "";
 
 
 			output += id + "," + reactions + "\n";
